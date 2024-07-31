@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M D FRANCIS FURNITURE MART</title>
+    <link rel="stylesheet" href="booking.css">
+    <script src="https://kit.fontawesome.com/c8d63558d6.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&family=Text+Me+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="navigations">
+            <img src="images/logo transparent.png" alt="LOGO">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="product.html">PRODUCTS</a></li>
+                <li><a href="booking.html">BOOKING</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+            </ul>
+            <input type="search" placeholder="Search here...">
+        </div>
+        
+    </nav>
+
+    <div class="menu-bar">
+        <h2>M D FRANCIS <br>FURNITURE MART</h2>
+        <i onclick=showSidebar() class="fa-solid fa-bars fa-xl" style="color: #000000;"></i>
+    </div>
+
+
+    <section class="booking" id="booking">
+        <div class="sidebar">
+            <i onclick=closeSidebar() class="fa-solid fa-xmark fa-xl" style="color: #000000;"></i>
+            <h1>M D FRANCIS FURNITURE MART</h1>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="product.html">PRODUCTS</a></li>
+                <li><a href="booking.html">ENQUIRY</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+            </ul>
+        </div>
+        <div class="booking-home-content">
+            <div class="booking-home-text">
+                <h1>Book Your Furniture Online</h1>
+                <p>
+                    Enjoy the convenience of booking your furniture online with M D Francis Furniture Mart. Simply select your desired products using their unique product codes and provide your contact details. Our team will get in touch with you to confirm your booking and arrange delivery. Follow these steps to book your furniture online.
+                    <br><br><b>Step 1: Browse Our Collection</b><br>
+                    Explore our extensive range of furniture, including living room sets, bedroom furniture, dining tables, and more. Note the product codes for the items you wish to book.
+                    <br><br><b>Step 2: Submit an Enquiry Form</b><br>
+                    Enter the product codes and your contact details in the form below. Our team will contact you to finalize your booking.
+                </p>
+            </div>
+            <div class="fare-estimator">
+                <h1>Enquiry Form</h1>
+                <p>Enter your contact details and product code below.<br>Our team will contact you with further details
+                </p>
+                <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSck4paqsvoRSRXQDQB5GmOOdyQLk_my0aamvmyGiLLdN-OTlg/formResponse" method="POST" target="hidden_iframe" id="booking-enquiry" onsubmit="return submitForm(this);">
+                    <label><b>Name :</b></label>
+                    <input type="text" placeholder="Your Name" name="entry.1922883042" id="name" required><br><br>
+                    <label><b>Contact No.: </b></label>
+                    <input type="number" placeholder="Your Contact Number" name="entry.172986660" id="phone" required><br><br>
+                    <label><b>Place : </b></label>
+                    <input type="text" placeholder="Your Place" name="entry.296237871" id="place"><br><br>
+                    
+                    <label><b>Are you looking for a customised product?</b></label><br><br>
+                    <label class="yesno">
+                        <input type="radio" id="yes" name="entry.715400567" value="yes" onclick="hideProductCode()">
+                        Yes
+                    </label>
+                    <label class="yesno">
+                        <input type="radio" id="no" name="entry.715400567" value="no" onclick="showProductCode()">
+                        No
+                    </label><br><br>
+                    <div id="product-code" style="display: none;">
+                        <label for="product-code-input">Product Code:</label>
+                        <input type="text" id="product-code-input" name="entry.1731173779" placeholder="Enter the product code">
+                    </div>
+                    <script>
+                        function showProductCode() {
+                          document.getElementById("product-code").style.display = "block";
+                        }
+                      
+                        function hideProductCode() {
+                          document.getElementById("product-code").style.display = "none";
+                        }
+                      </script>
+                        <script>
+                                function submitForm(form) {
+                                    swal({
+                                    title: "Enquiry request submitted!",
+                                    text: "You will receive a call shortly",
+                                    icon: "success",
+                                    button: "OK",
+                                    })
+                                    .then(function (isOkay) {
+                                    if (isOkay) {
+                                        // Prevent default form submission behavior
+                                        event.preventDefault();
+                                        // Submit the form data using AJAX instead
+                                        submitFormData(form);
+                                    }
+                                    });
+                                    return false;
+                                }
+                                
+                                function submitFormData(form) {
+                                    const formData = new FormData(form);
+                                    fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLSck4paqsvoRSRXQDQB5GmOOdyQLk_my0aamvmyGiLLdN-OTlg/formResponse', {
+                                    method: 'POST',
+                                    body: formData,
+                                    mode: 'no-cors'
+                                    })
+                                    .then(response => {
+                                    console.log('Form data submitted successfully');
+                                    })
+                                    .catch(error => {
+                                    console.error('Error submitting form data:', error);
+                                    });
+                                }
+                        </script>
+                    <br><br>
+                    <button type="submit">Send</button>
+                </form>
+
+                <!--<script>
+                    document.getElementById('booking-enquiry').addEventListener('submit', function(event) {
+                        event.preventDefault();
+            
+                        const form = event.target;
+                        const data = new FormData(form);
+            
+                        const params = new URLSearchParams();
+                        for (const pair of data) {
+                            params.append(pair[0], pair[1]);
+                        }
+            
+                        fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLSck4paqsvoRSRXQDQB5GmOOdyQLk_my0aamvmyGiLLdN-OTlg/formResponse', {
+                            method: 'POST',
+                            body: params,
+                            mode: 'no-cors'
+                        }).then(response => {
+                            form.reset();
+                        }).catch(error => {
+                        });
+                    });
+                </script>-->
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links-newsletter">
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html"> Home</a></li>
+                        <li><a href="product.html"> Products</a></li>
+                        <li><a href="booking.html"> Enquiry</a></li>
+                        <li><a href="contact.html"> Contact Us</a></li>
+                        <li><a href="#about-us"> About Us</a></li>
+                        <li><a href="sitemap.html"> Site Map</a></li>
+                    </ul>            
+                </div>
+                
+            </div>
+            <div class="developer-info">
+                <p>&copy; 2024 | All rights reserved<br>Developed by <a href="https://www.instagram.com/ashrith_varghese">Ashrith Varghese</a></p>
+            </div>
+            <button class="go-up">
+                <a href="#booking"><i class="fa-solid fa-angles-up fa-bounce fa-2xl" style="color: #a7a28a;"></i></a>
+            </button>
+                        
+    </footer>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M D FRANCIS FURNITURE MART</title>
+    <link rel="stylesheet" href="about.css">
+    <script src="https://kit.fontawesome.com/c8d63558d6.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&family=Text+Me+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="navigations">
+            <img src="images/logo transparent.png" alt="LOGO">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="product.html">PRODUCTS</a></li>
+                <li><a href="booking.html">ENQUIRY</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+            </ul>
+            <input type="search" placeholder="Search here...">
+        </div>
+        
+    </nav>
+
+    <div class="menu-bar">
+        <h2>M D FRANCIS <br>FURNITURE MART</h2>
+        <i onclick=showSidebar() class="fa-solid fa-bars fa-xl" style="color: #000000;"></i>
+    </div>
+
+
+    <section class="about-us" id="about-us">
+        
+
+        <div class="sidebar">
+            <i onclick=closeSidebar() class="fa-solid fa-xmark fa-xl" style="color: #000000;"></i>
+            <h1>M D FRANCIS FURNITURE MART</h1>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="product.html">PRODUCTS</a></li>
+                <li><a href="booking.html">ENQUIRY</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="#about-us">ABOUT</a></li>
+            </ul>
+        </div>
+        <h1 class="about-us-main-heading">About Us</h1>
+        <div class="mission-vision">
+            <div class="mission-vision-multi-text">
+                <span class=" text first-text">Our</span>
+                <span class="text sec-text">Vision</span>
+            </div>
+            <script>
+                const text = document.querySelector(".sec-text");
+                const textLoad = () => {
+                    setTimeout(() => {
+                        text.textContent = "Vision";
+                    }, 0);
+                    setTimeout(() => {
+                        text.textContent = "Mission";
+                    }, 4000); //1s = 1000 milliseconds
+                }
+                textLoad();
+                setInterval(textLoad, 8000);
+            </script>
+            <p>
+                At M D Francis Furniture Mart, our mission is to provide high-quality, stylish furniture that enhances the beauty and comfort of every home. We are committed to exceptional customer service and craftsmanship, ensuring every piece meets the highest standards. Our vision is to create a world where every home is a sanctuary of style and comfort. We aim to be the leading furniture provider, recognized for our innovation, quality, and dedication to customer satisfaction. By continuously improving and expanding our offerings, we strive to bring elegance and functionality to homes everywhere.
+            </p>
+        </div>
+        <div class="our-backbone">
+            <h1 class="our-backbone-main-heading">Our Backbone</h1>
+            <div class="founder">
+                <img src="images/founder.jpg">
+                <h3>Founder</h3>
+                <p>Mr.Inasu</p>
+            </div>
+    </section>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links-newsletter">
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html"> Home</a></li>
+                        <li><a href="product.html"> Products</a></li>
+                        <li><a href="booking.html"> Enquiry</a></li>
+                        <li><a href="contact.html"> Contact Us</a></li>
+                        <li><a href="#about-us"> About Us</a></li>
+                    </ul>            
+                </div>
+            </div>
+            <div class="developer-info">
+                <p>&copy; 2024 | All rights reserved<br>Developed by <a href="https://www.instagram.com/ashrith_varghese">Ashrith Varghese</a></p>
+            </div>
+            <button class="go-up">
+                <a href="#about-us"><i class="fa-solid fa-angles-up fa-bounce fa-2xl" style="color: #a7a28a;"></i></a>
+            </button>
+                        
+    </footer>
+</body>
+</html>

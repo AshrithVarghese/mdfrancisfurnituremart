@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M D FRANCIS FURNITURE MART</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c8d63558d6.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&family=Text+Me+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="navigations">
+            <img src="images/logo transparent.png" alt="LOGO">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="product.html">PRODUCTS</a></li>
+                <li><a href="booking.html">ENQUIRY</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="#about-us">ABOUT</a></li>
+            </ul>
+            <input type="search" placeholder="Search here...">
+        </div>
+        
+    </nav>
+
+    <div class="menu-bar">
+        <h2>M D FRANCIS <br>FURNITURE MART</h2>
+        <i onclick=showSidebar() class="fa-solid fa-bars fa-xl" style="color: #000000;"></i>
+    </div>
+
+
+    
+    <section class="home" id="home">
+        
+
+        <div class="sidebar">
+            <i onclick=closeSidebar() class="fa-solid fa-xmark fa-xl" style="color: #000000;"></i>
+            <h1>M D FRANCIS FURNITURE MART</h1>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="product.html">PRODUCTS</a></li>
+                <li><a href="booking.html">ENQUIRY</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="#about-us">ABOUT</a></li>
+            </ul>
+        </div>
+        <div class="home-image">
+            <img src="images/logo transparent.png">
+        </div>
+        <div class="home-text">
+            <h1>M D FRANCIS <br>FURNITURE MART</h1>
+            <p>
+                Bring your home to life with our collection of high-quality furniture in both timeless and modern designs at M D Francis Furniture Mart. Our collection is as vast as your taste and space. Apart from the extensive variety of furniture, we also have custom furniture design services aimed at creating that perfect piece answering your need. We provide hassle-free professional delivery and assembly services right at your doorstep. Visit us today and let our friendly, very knowledgeable staff help you through the vast array of furniture items to make a house truly your expression of personality and taste.
+            </p>
+        </div>
+        
+    </section>
+    <section class="gallery">
+        <div class="wrapper">
+            <div class="track">
+                <div class="logo">
+                    <img src="images/Gallery/img1.jpg"/>
+                </div>
+                <div class="logo">
+                    <img src="images/Gallery/img2.jpg"/>
+                </div>
+                <div class="logo">
+                    <img src="images/Gallery/img3.jpg"/>
+                </div>
+                <div class="logo">
+                    <img src="images/Gallery/img4.jpg"/>
+                </div>
+                <div class="logo">
+                    <img src="images/Gallery/img5.jpg"/>
+                </div>
+                <div class="logo">
+                    <img src="images/Gallery/img6.jpg"/>
+                </div>
+                <div class="logo">
+                    <img src="images/Gallery/img7.jpg"/>
+                </div>
+                <div class="logo">
+                    <img src="images/Gallery/img8.jpg"/>
+                </div>
+                <div class="logo">
+                    <img src="images/Gallery/img9.jpg"/>
+                </div>
+                <div class="logo">
+                    <img src="images/Gallery/img10.jpg"/>
+                </div>
+                <div class="logo">
+                    <img src="images/Gallery/img11.jpg"/>
+                </div>
+                <div class="logo">
+                    <img src="images/Gallery/img12.jpg"/>
+                </div>
+                <div class="logo">
+                    <img src="images/Gallery/img13.jpg"/>
+                </div>
+                <div class="logo">
+                    <img src="images/Gallery/img14.jpg"/>
+                </div>
+                <div class="logo">
+                    <img src="images/Gallery/img15.jpg"/>
+                </div>
+                <div class="logo">
+                    <img src="images/Gallery/img16.jpg"/>
+                </div>
+                <div class="logo">
+                    <img src="images/Gallery/img17.jpg"/>
+                </div>
+                <div class="logo">
+                    <img src="images/Gallery/img18.jpg"/>
+                </div>
+                <div class="logo">
+                    <img src="images/Gallery/img19.jpg"/>
+                </div>
+                <div class="logo">
+                    <img src="images/Gallery/img20.jpg"/>
+                </div>
+                <div class="logo">
+                    <img src="images/Gallery/img21.jpg"/>
+                </div>
+                <div class="logo">
+                    <img src="images/Gallery/img22.jpg"/>
+                </div>
+                <div class="logo">
+                    <img src="images/Gallery/img23.jpg"/>
+                </div>
+                <div class="logo">
+                    <img src="images/Gallery/img24.jpg"/>
+                </div>
+                <div class="logo">
+                    <img src="images/Gallery/img25.jpg"/>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const track = document.querySelector('.track');
+            const logos = document.querySelectorAll('.logo');
+            const wrapper = document.querySelector('.wrapper');
+
+            let currentSlide = 0;
+            let slideWidth = logos[0].offsetWidth;
+            let slideCount = logos.length;
+
+            // duplicate the images and append them to the end of the track
+            for (let i = 0; i < slideCount; i++) {
+            const clone = logos[i].cloneNode(true);
+            track.appendChild(clone);
+            }
+
+            function slideNext() {
+            currentSlide = (currentSlide + 1) % (slideCount * 2); // update the current slide index
+            track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+            if (currentSlide >= slideCount) {
+                // reset the current slide index when the duplicate images start
+                currentSlide -= slideCount;
+                track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+            }
+            }
+
+            function slidePrev() {
+            currentSlide = (currentSlide - 1 + (slideCount * 2)) % (slideCount * 2);
+            track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+            if (currentSlide >= slideCount) {
+                currentSlide -= slideCount;
+                track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+            }
+            }
+
+            // add event listeners to navigate through the slides
+            wrapper.addEventListener('click', () => {
+            slideNext();
+            });
+
+            // add event listener to navigate through the slides on swipe
+            wrapper.addEventListener('touchstart', (e) => {
+            const startX = e.touches[0].clientX;
+            const startY = e.touches[0].clientY;
+
+            wrapper.addEventListener('touchmove', (e) => {
+                const endX = e.touches[0].clientX;
+                const endY = e.touches[0].clientY;
+
+                if (Math.abs(endX - startX) > Math.abs(endY - startY)) {
+                if (endX > startX) {
+                    slidePrev();
+                } else {
+                    slideNext();
+                }
+                }
+            });
+            });
+
+            // add automatic sliding
+            setInterval(slideNext, 2000); // slide every 1 second
+        </script>
+    </section>
+
+    <section class="why-us">
+        <div class="custom-shape-divider-top-1721229783">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M649.97 0L550.03 0 599.91 54.12 649.97 0z" class="shape-fill"></path>
+            </svg>
+        </div>
+        <div class="why-us-text">
+            <h1 class="why-us-text-main-heading">Our Products</h1>
+            <div class="why-us-card">
+                <a href="product.html#cots"><div class="card">
+                    <img src="images/cot.png">
+                    <h1>Cot</h1>
+                </div></a>
+                <a href="product.html#tables"><div class="card">
+                    <img src="images/table.png">
+                    <h1>Tables</h1>
+                </div></a>
+                <a href="product.html#sofas"><div class="card">
+                    <img src="images/sofa.png">
+                    <h1>Sofa</h1>
+                </div></a>
+                <a href="product.html#chairs"><div class="card">
+                    <img src="images/chairs.png">
+                    <h1>Chairs</h1>
+                </div></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <h1 class="our-services-main-heading">Our Services</h1>
+        <div class="ride-booking">
+            <img src="images/custom furniture.png">
+            <div class="ride-booking-text">
+                <h1>Custom Furniture Design</h1>
+                <p>
+                    Our Custom Furniture Design service allows you to create unique pieces tailored to your taste and space. Collaborate with our talented design team and skilled artisans, who use premium materials to bring your vision to life, ensuring every piece is a perfect fit for your home.
+                </p>
+                <button onclick="window.location.href='booking.html'">Book Now</button>
+            </div>
+        </div>
+        <div class="corporate-services">
+            <div class="corporate-services-text">
+                <h1>Delivery and Assembly</h1>
+                <p>
+                    Experience convenience with our Delivery and Assembly service. We ensure your furniture reaches you promptly and safely, and our professional team handles the on-site assembly. Enjoy your new furniture without the hassle, knowing everything is set up perfectly and ready for use.
+                </p>
+            </div>
+            <img src="images/delivery.png">
+        </div>
+    </section>
+    
+    <section class="about-us" id="about-us">
+        <h1 class="about-us-main-heading">About Us</h1>
+        <div class="mission-vision">
+            <div class="mission-vision-multi-text">
+                <span class=" text first-text">Our</span>
+                <span class="text sec-text">Vision</span>
+            </div>
+            <script>
+                const text = document.querySelector(".sec-text");
+                const textLoad = () => {
+                    setTimeout(() => {
+                        text.textContent = "Vision";
+                    }, 0);
+                    setTimeout(() => {
+                        text.textContent = "Mission";
+                    }, 4000); //1s = 1000 milliseconds
+                }
+                textLoad();
+                setInterval(textLoad, 8000);
+            </script>
+            <p>
+                At M D Francis Furniture Mart, our mission is to provide high-quality, stylish furniture that enhances the beauty and comfort of every home. We are committed to exceptional customer service and craftsmanship, ensuring every piece meets the highest standards. Our vision is to create a world where every home is a sanctuary of style and comfort. We aim to be the leading furniture provider, recognized for our innovation, quality, and dedication to customer satisfaction. By continuously improving and expanding our offerings, we strive to bring elegance and functionality to homes everywhere.
+            </p>
+        </div>
+        <div class="our-backbone">
+            <h1 class="our-backbone-main-heading">Our Backbone</h1>
+            <div class="founder">
+                <img src="images/founder.jpg">
+                <h3>Founder</h3>
+                <p>Mr.Inasu</p>
+            </div>
+    </section>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links-newsletter">
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html"> Home</a></li>
+                        <li><a href="product.html"> Products</a></li>
+                        <li><a href="booking.html"> Booking</a></li>
+                        <li><a href="contact.html"> Contact Us</a></li>
+                        <li><a href="#about-us"> About Us</a></li>
+                        <li><a href="sitemap.html"> Site Map</a></li>
+                    </ul>            
+                </div>
+                <!--<div class="newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for free to get the latest updates and offers.<br>Currently we are providing limited subscriptions.
+                    </p>
+                    <form action="https://formspree.io/f/xeojoywp" method="post">
+                        <label>Name : </label>
+                        <input type="text" name="name" placeholder="Enter your name" required><br><br>
+                        <label>Email : </label>
+                        <input type="email" name="email" placeholder="Enter your email" required><br><br>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>-->
+            </div>
+            <div class="developer-info">
+                <p>&copy; 2024 | All rights reserved<br>Developed by <a href="https://www.instagram.com/ashrith_varghese">Ashrith Varghese</a></p>
+            </div>
+            <button class="go-up">
+                <a href="#home"><i class="fa-solid fa-angles-up fa-bounce fa-2xl" style="color: #a7a28a;"></i></a>
+            </button>
+                        
+    </footer>
+</body>
+</html>
